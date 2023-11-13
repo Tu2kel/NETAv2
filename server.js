@@ -13,7 +13,7 @@ app.use(express.json()); // Parses data
 app.use(morgan("dev")); // Logs to console
 
 //middleware joining client / express.static sends static files requests to the client.
-app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "dist")));
 
 mongoose.set("strictQuery", true);
 
@@ -53,7 +53,7 @@ app.use((err, req, res, next) => {
 
 // "catchall" route handler / Final Handler / sends main index.html back to client
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
 // Server Listen

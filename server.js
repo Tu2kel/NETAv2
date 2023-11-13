@@ -53,7 +53,7 @@ app.use((err, req, res, next) => {
 
 // "catchall" route handler / Final Handler / sends main index.html back to client
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
 // Server Listen

@@ -179,10 +179,7 @@ export default function UserProvider(props) {
       .catch((err) => console.log(err));
   }
 
-  useEffect(() => {
-    getAllReviews(); // Get all reviews when the component mounts
-  }, []);
-
+  
   const [comments, setComments] = useState([]);
 
   function getComment() {

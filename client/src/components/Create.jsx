@@ -16,6 +16,7 @@ export default function Create(props) {
   useEffect(() => {
     // Saves reviews to localStorage whenever they change
     getUserReviews();
+    
   }, []);
 
   // console.log("in Create line 21", 'Name:', username, 'review:', reviews);

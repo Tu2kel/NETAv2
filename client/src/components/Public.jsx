@@ -9,6 +9,8 @@ export default function Public(props) {
     getAllReviews(); // adding all reviews on public page
   }, []);
 
+  
+
   return (
     <div className="public">
       <header className="review_page">

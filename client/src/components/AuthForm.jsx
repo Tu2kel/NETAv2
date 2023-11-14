@@ -27,6 +27,7 @@ export default function AuthForm(props) {
         placeholder="Password"
       />
       <button>{btnText}</button>
+      {/* <button>Click to Login</button> */}
       <p style={{ color: "red" }}> </p>
     </form>
   );

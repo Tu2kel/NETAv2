@@ -10,8 +10,7 @@ import { UserContext } from "./context/UserProvider";
 export default function App() {
   const { token, logout } = useContext(UserContext);
   return (
-    <div className="app">
-      <div className="">
+      <>
         {token && <Navbar logout={logout} />}
         {/*if token true render Navbar with logout*/}
         <Routes>
@@ -21,6 +20,8 @@ export default function App() {
           />
           {/* If user has a token redirect to the '/create'
         route. If not, render the 'Auth' component  */}
+
+        
           <Route
             path="/create"
             element={
@@ -38,7 +39,6 @@ export default function App() {
             }
           />
         </Routes>
-      </div>
-    </div>
+      </>
   );
 }

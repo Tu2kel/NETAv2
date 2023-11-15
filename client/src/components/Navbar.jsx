@@ -5,18 +5,16 @@ import "../App.css";
 export default function Navbar(props) {
   const { logout } = props;
   return (
-    <div className="navbar">
       <div className="links_header">
-        <Link to="/create" className="nav_link">
+        <Link to="/create" className="nav_link creates">
           Home{" "}
         </Link>
-        <Link to="/public" className="nav_link">
+        <Link to="/public" className="nav_link publics">
           Reviews{" "}
         </Link>
-        <h2 onClick={logout} className="nav_link">
+        <h2 onClick={logout} className="nav_link logouts">
           Logout{" "}
         </h2>
       </div>
-    </div>
   );
 }

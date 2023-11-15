@@ -24,6 +24,7 @@ export default function Create(props) {
   // console.log('Create comp, reviews:', reviews)
   return (
     <>
+    <div className="createPage">
       <h1 className="reviewTitle">Welcome {username}!</h1>
       <h3 className="h3_review">Create a Review</h3>
       <ReviewForm addReview={addReview} />
@@ -33,6 +34,7 @@ export default function Create(props) {
       </div>
       <ReviewList reviews={reviews} />{" "}
       {/* renders the ReviewList component and pass the user's reviews as a prop. */}
+    </div>
     </>
   );
 }

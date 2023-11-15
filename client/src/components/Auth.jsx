@@ -49,7 +49,7 @@ export default function Auth() {
   }
 
   return (
-    <div className="navbar">
+    <div className="login_navbar">
       <>
         <div className="alerts">
           <p /*style={{ color: "yellow" }}*/>{errMsg}</p>{" "}

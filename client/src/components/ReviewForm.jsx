@@ -37,13 +37,13 @@ export default function ReviewForm(props) {
         onChange={handleChange}
         placeholder="Title"
       />
-      <input
+      {/* <input
         type="text"
         name="description"
         value={description}
         onChange={handleChange}
         placeholder="Place Comment Here"
-      />
+      /> */}
       <input
         type="text"
         name="imgUrl"

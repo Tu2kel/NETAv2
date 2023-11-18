@@ -4,7 +4,7 @@ import ReviewList from "./ReviewList";
 import { UserContext } from "../context/UserProvider";
 import "../App.css";
 
-export default function Create(props) {
+export default function Create() {
   const {
     //grab from UserContext in UserProvider
     user: { username },
@@ -16,7 +16,6 @@ export default function Create(props) {
   useEffect(() => {
     // Saves reviews to localStorage whenever they change
     getUserReviews();
-    
   }, []);
 
   // console.log("in Create line 21", 'Name:', username, 'review:', reviews);

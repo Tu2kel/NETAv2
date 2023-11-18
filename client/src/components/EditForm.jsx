@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
-export default function EditForm({ reviewData, save, handleCommentChange }) {
+export default function EditForm({ reviewData, save }) {
   const [editedReview, setEditedReview] = useState({
     //initial state of the editedreview is set to the original review data
     title: reviewData.title,
-    description: reviewData.description,
+    // description: reviewData.description,
     imgUrl: reviewData.imgUrl,
     comment: reviewData.comment,
   });
+
+ 
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -19,8 +21,13 @@ export default function EditForm({ reviewData, save, handleCommentChange }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    save(editedReview); // saves new value/ state
+    save(editedReview)
+     // saves new value/ state
+
+    console.log("editedReview", editedReview);
   }
+
+  
 
   return (
     <form className="editInputForm" onSubmit={handleSubmit}>
@@ -30,12 +37,12 @@ export default function EditForm({ reviewData, save, handleCommentChange }) {
         value={editedReview.title}
         onChange={handleChange}
       />
-      <input
+      {/* <input
         type="text"
         name="description"
         value={editedReview.description}
         onChange={handleChange}
-      />
+      /> */}
       <input
         type="text"
         name="imgUrl"
@@ -46,10 +53,10 @@ export default function EditForm({ reviewData, save, handleCommentChange }) {
       <textarea
         name="comment"
         value={editedReview.comment}
-        onChange={handleCommentChange}
+        onChange={handleChange}
+        // onChange={handleCommentChange}
         placeholder="Edit a Comment..."
       ></textarea>
-
       <button type="submit">Save</button>
     </form>
   );

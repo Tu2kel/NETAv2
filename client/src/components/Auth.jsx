@@ -52,18 +52,17 @@ export default function Auth() {
     <div className="login_navbar">
       <>
         <div className="alerts">
-          <p /*style={{ color: "yellow" }}*/>{errMsg}</p>{" "}
+          <p >{errMsg}</p>{" "}
         </div>
 
-        {/* Might Delete */}
         {!toggle ? ( // Conditionally render the sign-up form if 'toggle' is false
           <>
             <div className="authHeader">
               <h1 className="neta">N E T A </h1>
               <h2 className="authTitle"> Never Eating There Again🤢</h2>
             </div>
-            <AuthForm
-              handleChange={handleChange} //
+            <AuthForm 
+              handleChange={handleChange} 
               handleSubmit={handleSignup}
               inputs={inputs}
               btnText="Sign up"
@@ -94,7 +93,7 @@ export default function Auth() {
               <h1 className="neta">N E T A</h1>
               <h2 className="authTitle">🫡 WELCOME BACK 😀</h2>
             </div>
-            <h3 className="sign_Back_In"> Sign In Below</h3>
+
             <AuthForm
               handleChange={handleChange}
               handleSubmit={handleLogin}

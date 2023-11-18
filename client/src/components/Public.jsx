@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserProvider";
 import ReviewList from "./ReviewList";
 
-export default function Public(props) {
+export default function Public() {
   const { publicReview, getAllReviews } = useContext(UserContext);
 
   useEffect(() => {

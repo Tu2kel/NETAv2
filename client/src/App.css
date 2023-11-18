@@ -43,31 +43,31 @@
   text-decoration: underline;
 }
 
-.sign_Back_In {
-  position: relative;
-  text-align: center;
-  top: 50vh;
+.sign_In_grid {
+  
   font-weight: bolder;
   font-size: 1.56;
-  color: rebeccapurple;
+  color: hsl(270, 50%,70%);
   text-decoration: underline;
-  /* text-decoration-color: rebeccapurple; */
+  z-index: -1;
 }
+
 
 #join {
   position: absolute;
-  top: 65%;
-  left: 57vw;
-  color: rebeccapurple;
+  top: 67vh;
+  left: 59vw;
+  color: hsl(270, 50%,70%);
+  z-index: 9;
 }
 
 
-
-
 .login {
-  position: fixed;
-  top: 65%;
-  left: 55.5vw;
+  position: absolute;
+  top: 67vh;
+  left: 58.6vw;
+  color: hsl(270, 50%,70%);
+  z-index: 9;
 }
 .authForm {
   position: absolute;
@@ -386,7 +386,7 @@ li {
 
 
 
-@media (320px <= width <= 780px ) or (orientation: landscape) {
+/* @media (320px <= width <= 780px ) or (orientation: landscape) {
   
   
   .youtube {
@@ -396,7 +396,7 @@ li {
   }
   .authForm{
     z-index: 9;
-    /* bottom: 7vh; */
+    
 
   }
   .authHeader{
@@ -418,14 +418,80 @@ li {
     margin-bottom: 1vh;
   }
 
-  #join {
+  #join, .login {
     
     transform: translate(-50%, -50%);
   }
+} */
+
+@media screen and (width < 2100px) {
+  .profile {
+    padding: 3rem 2rem;
+  }
+
+  .profile > h1 {
+    margin-top: -10vh;
+  }
 }
 
-/* @media (max-width: 2780px) {
+/* @media screen and (max-width: 736px) { */
+@media screen and (max-width <= 736px) {
+  /* .profileWrap {
+    display: flex;
+    flex-direction: row;
+  } */
+
+  .navbar{
+    display: grid;
+    grid-row: repeat(2, 1fr);
+  }
+
+  /* .nav_link {
+    
+    font-size: 2rem;
+    padding: 5rem;
+  } */
+
+  .profile {
+    padding: 2rem 1rem;
+  }
+
+  .profile > h1 {
+    margin-top: -10vh;
+  }
+
+
+}
+
+@media screen and (width <= 608px) {
+  /* .profileWrap {
+    display: flex;
+    flex-direction: row;
+  } */
+
+  .profile {
+    padding: 2rem 1rem;
+  }
+
+  .navbar {
+    display: grid;
+    grid-row: repeat(2, 1fr);
+    /* flex-direction: row; */
+  }
+
+  .nav_link {
+    
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
   
+}
+
+/* @media screen and (width < ){
+  .navbar{
+    width: 100%;
+  }
 } */
 
 

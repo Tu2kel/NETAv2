@@ -7,7 +7,7 @@ import EditForm from "./EditForm";
 //Child
 
 export default function Review(props) {
-  const { title, description, imgUrl, _id, upvotes, downvotes, reviewData } =
+  const { title, imgUrl, _id, upvotes, downvotes, reviewData } =
     props; // Destructured properties from the props
 
   const { upVote, downVote, deleteReview, editReview } =
@@ -15,6 +15,7 @@ export default function Review(props) {
 
   const [reviewComments, setReviewComments] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
+  const [currentReviewData, setCurrentReviewData] = useState(reviewData);
 
   function handleEditClick() {
     setIsEditing(true); // set to true
@@ -30,8 +31,10 @@ export default function Review(props) {
   function handleSaveClick(updatedReview) {
     // Call the editreview function with the review ID and updated data
     editReview(_id, updatedReview);
+    console.log("editReview:" , editReview);
     // Exit edit mode
     setIsEditing(false); //collapses edit form back to normal
+    setCurrentReviewData(updatedReview); //updates state 
   }
 
   return (
@@ -50,10 +53,10 @@ export default function Review(props) {
               {title}{" "}
             </h1>
             <br />
-            <h3 title="Comment" className="card_body">
+            {/* <h3 title="Comment" className="card_body">
               {" "}
               {description}{" "}
-            </h3>
+            </h3> */}
 
             <CommentForm reviewId={reviewData._id} />
             <CommentList

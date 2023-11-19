@@ -29,28 +29,56 @@ commentRouter.post("/:reviewId", (req, res, next) => {
   });
 });
 
-// Get review by comment by reviewId
-commentRouter.get("/:reviewId", (req, res, next) => {
-  // const reviewId = req.params.reviewId;
-  const reviewId = req.auth._id;
+// Get comment/ reviewId
+commentRouter.get("/:reviewId",async(req, res, next) => {
+ try{ const reviewId = req.params.reviewId;
+  const foundReview = await Review.findById({_id: reviewId})
+  res.status(200).send(foundReview)
+}
+catch (err){
+  console.log(err)
+  res.status(500)
+  res.json({message:"issue in get by one route review"})
+}
+
+
+
+  // const reviewId = req.auth._id;
   // req.body.review = req.params.reviewId;
   // req.body.createdBy = req.auth._id;
-  console.log("REQ", reviewId);
-  Promise.all([
-    Review.findOne({ _id: reviewId }).exec(),
-    Comment.find({ review: reviewId }).exec(),
-  ])
-    .then(([foundReview, comments]) => {
-      if (!foundReview) {
-        res.status(404).json({ message: "review not found" });
-      } else {
-        res.status(200).json({ review: foundReview, comments: comments });
-      }
-    })
-    .catch((err) => {
-      next(err);
-    });
+  // console.log("REQ", reviewId);
+  // Promise.all([
+  //   Review.findOne({ _id: reviewId }).exec(),
+  //   Comment.find({ review: reviewId }).exec(),
+  // ])
+  //   .then(([foundReview, comments]) => {
+  //     if (!foundReview) {
+  //       res.status(404).json({ message: "review not found" });
+  //     } else {
+  //       res.status(200).json({ review: foundReview, comments: comments });
+  //     }
+  //   })
+  //   .catch((err) => {
+  //     next(err);
+  //   });
 });
+
+commentRouter.put("/:commentId", (req, res, next) => {
+  Comment.findOneAndUpdate(
+    { _id: req.params.commentId, createdBy: req.auth._id },
+    req.body,
+    { new: true },
+    (err, updatedComment) => {
+      if (err) {
+        res.status(500);
+        return next(err);
+      }
+      return res.status(201).send(updatedComment);
+    }
+  );
+  
+
+})
 
 //Deletes
 commentRouter.delete("/:commentId", (req, res, next) => {

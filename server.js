@@ -58,5 +58,5 @@ app.get("*", (req, res) => {
 
 // Server Listen
 app.listen(7260, () => {
-  console.log(`Listening on port 7260`);
+  console.log(`NETA on port 7260`);
 });

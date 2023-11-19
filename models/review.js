@@ -6,9 +6,9 @@ const reviewSchema = new Schema({
     type: String,
     required: true,
   },
-  description: {
-    type: String,
-    required: true,
+  comments: {
+    type: Array,
+    default: [],
   },
   imgUrl: {
     type: String,

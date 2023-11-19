@@ -26,6 +26,8 @@ reviewRouter.get("/user", (req, res, next) => {
   });
 });
 
+//Get single review
+
 reviewRouter.get("/:reviewId", (req, res, next) => {
   const reviewId = req.params.reviewId;
   console.log("reviewId", reviewId);
@@ -47,7 +49,7 @@ reviewRouter.get("/:reviewId", (req, res, next) => {
     });
 });
 
-// Add new review
+// Add new review✅✅
 reviewRouter.post("/", async (req, res, next) => {
   try {
     req.body.createdBy = req.auth._id;
@@ -80,9 +82,11 @@ reviewRouter.delete("/:reviewId", (req, res, next) => {
       }
       return res
         .status(200)
-        .send(`Successfully deleted review: ${deletedReview.title}`);
+        .send(deletedReview);
+        // .send(`Successfully deleted review: ${deletedReview.title}`);
     }
   );
+  console.log("deletedReview:", deletedReview, "title:", title, req);
 });
 
 // Update review

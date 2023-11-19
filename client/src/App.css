@@ -424,22 +424,28 @@ li {
   }
 } */
 
-@media screen and (width < 2100px) {
-  .profile {
-    padding: 3rem 2rem;
+@media screen and (max-width: 2100px) {
+  #join, .login {
+    /* color: red; */
+    transform: translate(-50%, -50%);
+
+
   }
 
-  .profile > h1 {
+  /* .profile > h1 {
     margin-top: -10vh;
-  }
+  } */
 }
 
-/* @media screen and (max-width: 736px) { */
-@media screen and (max-width <= 736px) {
-  /* .profileWrap {
-    display: flex;
-    flex-direction: row;
-  } */
+/* @media screen and (max-width: 736px) or (orientation: landscape){ */
+@media screen and (min-width: 736px ) {
+  #join, .login{
+   /* position: absolute;
+   top: 35vh;
+   left: 35%; */
+   /* color: yellow; */
+   transform: translate(-50%, -50%);
+  }
 
   .navbar{
     display: grid;
@@ -463,26 +469,41 @@ li {
 
 }
 
-@media screen and (width <= 608px) {
-  /* .profileWrap {
-    display: flex;
-    flex-direction: row;
-  } */
-
-  .profile {
-    padding: 2rem 1rem;
+@media screen and (max-width: 320px) {
+  
+  .neta{
+    grid-column: span 2;
+    /* color: red; */
   }
 
-  .navbar {
+
+  .authHeader{
     display: grid;
-    grid-row: repeat(2, 1fr);
-    /* flex-direction: row; */
+    grid-template-columns: repeat(3, 1fr);
   }
+
+  .authTitle{
+    grid-column: span 2;
+    transform: translate(10%, 40%);
+    font-size: 26px;
+  }
+
+  #join, .login{
+   position: absolute;
+   top: 35vh;
+   left: 35%;
+  }
+
+
 
   .nav_link {
     
     font-size: 1rem;
     padding: 0.5rem;
+  }
+
+  .h3_review{
+    top: 25vh;
   }
 
   
